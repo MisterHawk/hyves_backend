@@ -14,7 +14,7 @@ if(isset($postdata) && !empty($postdata)) {
   $picture_url = mysqli_real_escape_string($con, trim($request->picture_url));
   $user_bio = mysqli_real_escape_string($con, $request->user_bio);
 
-  $sql = "INSERT INTO `profile`(`email`,`first_name`,`last_name`,`picture_url`,`user_bio`) VALUES ('{$email}','{$first_name}','{$last_name}','{$picture_url}','{$user_bio}')";
+  $sql = "INSERT INTO `profile`(`emailr`,`first_name`,`last_name`,`picture_url`,`user_bio`) VALUES ('{$email}','{$first_name}','{$last_name}','{$picture_url}','{$user_bio}')";
 
   if(mysqli_query($con,$sql)) {
     http_response_code(201);
