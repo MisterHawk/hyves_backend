@@ -1,14 +1,8 @@
 <?php
   require '../database.php';
 
-  $postdata = file_get_contents("php://input");
   $post = [];
-
-  if(isset($_POST['submit'])) {
-    $request = json_decode($postdata);
-    
-    // $user_id = 'mysqli_real_escape_string($con, $request->user_id)';
-    // $content = 'mysqli_real_escape_string($con, $request->content)';
+  if(isset($_POST['user_id'])) {
 
     $user_id = $_POST['user_id'];
     $content = $_POST['content'];

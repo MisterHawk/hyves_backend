@@ -3,7 +3,7 @@
 
   $profile = [];
   $id = $_GET['id'];
-  $sql = "SELECT id, username, first_name, last_name, picture_url, user_bio FROM profile WHERE id = {$id}";
+  $sql = "SELECT id, email, first_name, last_name, picture_url, user_bio FROM profile WHERE id = {$id}";
 
   // Echo result for 1 profile
   if($result = mysqli_query($con,$sql)) {

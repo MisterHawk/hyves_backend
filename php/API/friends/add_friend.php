@@ -2,7 +2,6 @@
 require '../database.php';
 
 // Variables and SQL statements
-$profiles = [];
 $id = $_GET['id'];
 $id2 = $_GET['id2'];
 $sql = "SELECT id FROM friends WHERE id={$id} and id2={$id2} OR id={$id2} and id2={$id}";
