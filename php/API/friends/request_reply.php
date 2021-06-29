@@ -3,17 +3,18 @@ require '../database.php';
 
 // Variables and SQL statements
 $friend_requests = [];
-$id = $_GET['id'];
-$reply = $_GET['reply'];
+$id = $_POST['id'];
+$id2 = $_POST['id2'];
+$reply = $_POST['reply'];
 
 // Get user IDs for every friend associated with given user id.
-if($reply === 1){
-    $sql = "UPDATE friends SET status='accepted' WHERE id2={$id} and status='pending'";
+if($reply == 1){
+    $sql = "UPDATE friends SET status='accepted' WHERE id={$id2} and id2={$id}";
     if($result = mysqli_query($con,$sql)) {
         echo json_encode("Friend added");
     }
 } else {
-    $sql = "DELETE FROM friends WHERE id2={$id} and status='pending'";
+    $sql = "DELETE FROM friends WHERE id={$id2} and id2={$id}";
     if($result = mysqli_query($con,$sql)) {
         echo json_encode("Friend declined");
     }

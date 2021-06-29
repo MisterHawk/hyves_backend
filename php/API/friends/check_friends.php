@@ -12,11 +12,11 @@ if($result = mysqli_query($con,$sql)) {
     $row = mysqli_fetch_assoc($result);
     $friends = $row;
     if($friends['status'] == 'accepted'){
-        echo json_encode("Friends");
+        echo json_encode("true");
     } elseif($friends['status'] == 'pending') {
-        echo json_encode("Friend request pending");
+        echo json_encode("true");
     } elseif (empty($friends)) {
-        echo json_encode("Not friends");
+        echo json_encode("false");
     }
 }
 ?>

@@ -7,9 +7,9 @@
 
   if($result = mysqli_query($con,$sql)) {
     $row = mysqli_fetch_assoc($result);
-    $id[] = $row;
+    $id = $row;
     echo json_encode($id);
   } else {
-    http_response_code(404);
+    http_response_code(422);
   }
 ?>

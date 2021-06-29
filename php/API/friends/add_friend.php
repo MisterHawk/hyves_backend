@@ -2,8 +2,8 @@
 require '../database.php';
 
 // Variables and SQL statements
-$id = $_GET['id'];
-$id2 = $_GET['id2'];
+$id = $_POST['id'];
+$id2 = $_POST['id2'];
 $sql = "SELECT id FROM friends WHERE id={$id} and id2={$id2} OR id={$id2} and id2={$id}";
 
 // Get user IDs for every friend associated with given user id.
