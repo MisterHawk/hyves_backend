@@ -27,7 +27,7 @@
                     $fileNameNew = uniqid('',true).'.'.$user_id.'.'.$fileActualExt;
                     $fileDestination = '../../../../hyves_images/post_pictures/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
-                    $image_url = 'http://localhost:8080/hyves_images/post_pictures/'.$fileNameNew;
+                    $image_url = 'http://127.0.0.1:8080/hyves_images/post_pictures/'.$fileNameNew;
                 }
             }
         }

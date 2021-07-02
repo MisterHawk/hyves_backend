@@ -7,7 +7,7 @@ if(isset($_POST['email'])) {
   $first_name = $_POST['first_name'];
   $last_name = $_POST['last_name'];
   $user_bio = $_POST['user_bio'];
-  $image_url = 'http://localhost:8080/hyves_images/profile_pictures/hyves_clown.jpeg';
+  $image_url = 'http://127.0.0.1:8080/hyves_images/profile_pictures/hyves_clown.jpeg';
   $gender = $_POST['gender'];
   if(!empty($_FILES['image'])){
       $image = $_FILES['image'];
@@ -29,7 +29,7 @@ if(isset($_POST['email'])) {
                   $fileNameNew = uniqid('',true).'.'.$fileActualExt;
                   $fileDestination = '../../../../hyves_images/profile_pictures/'.$fileNameNew;
                   move_uploaded_file($fileTmpName, $fileDestination);
-                  $image_url = 'http://localhost:8080/hyves_images/profile_pictures/'.$fileNameNew;
+                  $image_url = 'http://127.0.0.1:8080/hyves_images/profile_pictures/'.$fileNameNew;
               }
           }
       }
